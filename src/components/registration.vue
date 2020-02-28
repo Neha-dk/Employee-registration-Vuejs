@@ -18,8 +18,8 @@
             <label>Mail ID</label>
           </div>
           <input @change="mailValidation" type="text" v-model="email" />
-          <div class="mailcolor" v-bind:style="{color: red}">
-            <span v-bind:style="{ color: red}">{{warning}}</span>
+          <div class="mailcolor">
+            <span>{{warning}}</span>
           </div>
 
           <div class="Fields">
@@ -36,9 +36,9 @@
             <div class="Fields">
               <label>Gender</label>
             </div>
-            <input type="radio" v-model="gender" value="male" />Male
-            <input type="radio" v-model="gender" value="female" />
-Female
+            
+            <div @click="gender_event(0)"><input type="radio" v-model="gender" name="Gender"  value="male" /> Male</div>
+            <div @click="gender_event(1)"><input type="radio" v-model="gender" name="Gender"  value="female" />Female</div>
           </div>
           <div class="Fields">
             <label>Country</label>
@@ -66,13 +66,14 @@ Female
             <div class="Fields">
               <label>Hobbies</label>
             </div>
-            <input id="1" type="checkbox" v-model="Hobbies" value="Singing" />
- Singing
-            <input type="checkbox" v-model="Hobbies" value="Dancing" />
+            <label for="Singing"> Singing</label>
+            <input  type="checkbox" v-model="Hobbies" value="Singing" />
+ Singing 
+            <input  type="checkbox" v-model="Hobbies" value="Dancing" />
  Dancing
-            <input type="checkbox" v-model="Hobbies" value="Story Writing" />
+            <input  type="checkbox" v-model="Hobbies" value="Story Writing" />
  Story Writing
-            <input type="checkbox" v-model="Hobbies" value="Games" />
+            <input  type="checkbox" v-model="Hobbies" value="Games" />
  Games
           </div>
           <div class="Fields">
@@ -154,7 +155,7 @@ export default {
       fn: "",
       ln: "",
       email: "",
-      pwd: "",
+      pswd: "",
       country: "",
       gender: "",
       state: "",
@@ -171,12 +172,21 @@ export default {
     mailValidation() {
       var id = this.email;
       this.warning = id.endsWith("@gmail.com") ? "" : "Invalid Email";
+    },
+    gender_event(index)
+    {
+        document.getElementsByName("Gender")[index].checked = true;
+        this.gender = document.getElementsByName("Gender")[index].value;
     }
   }
 };
 </script>
 
 <style scoped lang="scss">
+label
+{
+    font-weight: bold;
+}
 .preview-container {
   border: 1px solid #000;
   padding: 10%;
