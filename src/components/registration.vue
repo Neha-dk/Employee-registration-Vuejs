@@ -44,11 +44,10 @@
             <label>Country</label>
           </div>
           <div class="country-class">
-            <select class="Country" v-model="country">
-              <option value="India">India</option>
-              <option value="Sri Lanka">Sri Lanka</option>
-              <option value="China">China</option>
-              <option value="Japan">Japan</option>
+            <select @change="state_collection()" class="Country" v-model= "country">
+                <option v-for= "c in country_object" :key="c.id">
+                    {{ c.country }}
+                </option>
             </select>
           </div>
           <div class="Fields">
@@ -56,10 +55,10 @@
           </div>
           <div class="state-class">
             <select class="State" v-model="state">
-              <option value="Andhra Pradesh">Andhra Pradesh</option>
-              <option value="Mumbai">Mumbai</option>
-              <option value="Tamilnadu">Tamilnadu</option>
-              <option value="Delhi">Delhi</option>
+              <option v-for= "s in state_object" :key="s.id">
+                    {{ s }}
+                </option>
+              
             </select>
           </div>
           <div class="hobbies-class">
@@ -106,7 +105,7 @@
           <div class="Fields">
             <label>Date of Birth</label>
           </div>
-          <p>{{date}}</p>
+          <p>{{date_format()}}</p>
           <div class="GenderClass">
             <div class="Fields">
               <label>Gender</label>
@@ -116,7 +115,7 @@
           <div class="Fields">
             <label>Country</label>
           </div>
-          <p>{{ country }}</p>
+          <p>{{ country}}</p>
 
           <div class="Fields">
             <label>State</label>
@@ -144,6 +143,8 @@
 </template>
 
 <script>
+import {Countries} from "../constants/constants.js";
+
 export default {
   name: "registration",
   props: {
@@ -158,10 +159,12 @@ export default {
       country: "",
       gender: "",
       state: "",
+      state_object:[],
       Hobbies: [],
       warning: "",
       Address: "",
-      date: ""
+      date: "",
+      country_object:Countries
     };
   },
   methods: {
@@ -176,6 +179,17 @@ export default {
     {
         document.getElementsByName("Gender")[index].checked = true;
         this.gender = document.getElementsByName("Gender")[index].value;
+    },
+    date_format()
+    {
+        this.date =  this.date.split("-").reverse().join("-");
+        return this.date;
+    },
+    state_collection()
+    {
+        
+        var state = (this.country_object.find(x=> x.country == this.country));
+        this.state_object=state.states;
     }
   }
 };
