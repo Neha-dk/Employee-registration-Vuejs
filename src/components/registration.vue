@@ -66,15 +66,14 @@
             <div class="Fields">
               <label>Hobbies</label>
             </div>
-            <label for="Singing"> Singing</label>
-            <input  type="checkbox" v-model="Hobbies" value="Singing" />
- Singing 
-            <input  type="checkbox" v-model="Hobbies" value="Dancing" />
- Dancing
-            <input  type="checkbox" v-model="Hobbies" value="Story Writing" />
- Story Writing
-            <input  type="checkbox" v-model="Hobbies" value="Games" />
- Games
+            <input  type="checkbox" v-model="Hobbies" id="sing" value="Singing" />
+            <label for="sing"> Singing</label>
+            <input  type="checkbox" v-model="Hobbies" id="dance" value="Dancing" />
+  <label for="dance">Dancing</label>
+            <input  type="checkbox" v-model="Hobbies" id="story" value="Story Writing" />
+     <label for="story">Story Writing</label>
+            <input  type="checkbox" v-model="Hobbies" id="games" value="Games" />
+    <label for="games">Games</label>
           </div>
           <div class="Fields">
             <label>Address</label>
