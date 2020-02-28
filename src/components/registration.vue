@@ -6,19 +6,16 @@
         <div class="form-class">
           <div class="Fields">
             <label>First Name</label>
-            
           </div>
           <input v-model="fn" />
-          
+
           <div class="Fields">
             <label>Last Name</label>
-            
           </div>
           <input type="text" v-model="ln" />
-          
+
           <div class="Fields">
             <label>Mail ID</label>
-            
           </div>
           <input @change="mailValidation" type="text" v-model="email" />
           <div class="mailcolor" v-bind:style="{color: red}">
@@ -27,28 +24,24 @@
 
           <div class="Fields">
             <label>Password</label>
-            
           </div>
-          
+
           <input type="password" v-model="pswd" />
-          
+
           <div class="Fields">
             <label>Date of Birth</label>
-            
           </div>
           <input type="date" v-model="date" />
           <div class="GenderClass">
             <div class="Fields">
               <label>Gender</label>
-              
             </div>
             <input type="radio" v-model="gender" value="male" />Male
-            <input type="radio" v-model="gender" value="female" />Female
-            
+            <input type="radio" v-model="gender" value="female" />
+Female
           </div>
           <div class="Fields">
             <label>Country</label>
-            
           </div>
           <div class="country-class">
             <select class="Country" v-model="country">
@@ -57,11 +50,9 @@
               <option value="China">China</option>
               <option value="Japan">Japan</option>
             </select>
-            
           </div>
           <div class="Fields">
             <label>State</label>
-            
           </div>
           <div class="state-class">
             <select class="State" v-model="state">
@@ -70,31 +61,28 @@
               <option value="Tamilnadu">Tamilnadu</option>
               <option value="Delhi">Delhi</option>
             </select>
-            
           </div>
           <div class="hobbies-class">
             <div class="Fields">
               <label>Hobbies</label>
-              
             </div>
-            <input id="1" type="checkbox" v-model="Hobbies" value="Singing" /> Singing
-            
-            <input type="checkbox" v-model="Hobbies" value="Dancing" /> Dancing
-            
-            <input type="checkbox" v-model="Hobbies" value="Story Writing" /> Story Writing
-            
-            <input type="checkbox" v-model="Hobbies" value="Games" /> Games
-            
+            <input id="1" type="checkbox" v-model="Hobbies" value="Singing" />
+ Singing
+            <input type="checkbox" v-model="Hobbies" value="Dancing" />
+ Dancing
+            <input type="checkbox" v-model="Hobbies" value="Story Writing" />
+ Story Writing
+            <input type="checkbox" v-model="Hobbies" value="Games" />
+ Games
           </div>
           <div class="Fields">
             <label>Address</label>
-            
           </div>
           <textarea v-model="Address">Where is your House</textarea>
-          
+
           <div class="submission-class" align="right">
-            <button class="Cancel">Cancel</button>
-            <button class="Submit">Submit</button>
+            <button class="cancel">Cancel</button>
+            <button class="submit">Submit</button>
           </div>
         </div>
       </form>
@@ -105,42 +93,33 @@
         <div class="form-class">
           <div class="Fields">
             <label>Full Name</label>
-            
           </div>
           <p>{{fullname()}}</p>
           <div class="Fields">
             <label>Mail ID</label>
-            
           </div>
           <p>{{email}}</p>
           <div class="Fields">
             <label>Password</label>
-            
           </div>
           <p>{{pswd}}</p>
           <div class="Fields">
             <label>Date of Birth</label>
-            
           </div>
           <p>{{date}}</p>
           <div class="GenderClass">
             <div class="Fields">
               <label>Gender</label>
-              
             </div>
             <p>{{gender}}</p>
           </div>
           <div class="Fields">
             <label>Country</label>
-            
           </div>
           <p>{{ country }}</p>
 
-          
-
           <div class="Fields">
             <label>State</label>
-            
           </div>
           <div class="state-class">
             <p>{{state}}</p>
@@ -149,7 +128,6 @@
           <div class="hobbies-class">
             <div class="Fields">
               <label>Hobbies</label>
-              
             </div>
             <ol>
               <li v-for="hobby in Hobbies" :key="hobby">{{hobby}}</li>
@@ -157,7 +135,6 @@
           </div>
           <div class="Fields">
             <label>Address</label>
-            
           </div>
           <p>{{Address}}</p>
         </div>
@@ -184,7 +161,7 @@ export default {
       Hobbies: [],
       warning: "",
       Address: "",
-      date:""
+      date: ""
     };
   },
   methods: {
