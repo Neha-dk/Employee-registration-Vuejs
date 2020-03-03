@@ -1,8 +1,14 @@
 <template>
   <div class="root">
-  <registration :rdata="edata"></registration>
-  <preview :pdata="edata"></preview>
-    
+    <div class="row">
+      <div class="column">
+        <registration :rdata="edata"></registration>
+      </div>
+      <div class="column">
+        <preview :pdata="edata"></preview>
+      </div>
+    </div>
+    <employeeDetails></employeeDetails>
   </div>
 </template>
 
@@ -10,35 +16,41 @@
 import { Countries } from "./constants/constants.js";
 import registration from "./components/registration_form";
 import preview from "./components/preview_form";
-var regData =  {
-      fn: "",
-      ln: "",
-      email: "",
-      pswd: "",
-      Hobbies: [],
-      warning: "",
-      Address: "",
-      date: "",
-      gender: "",
-      country: "",
-      state: "",
-      state_object: [],
-      country_object: Countries
-    };
+import employeeDetails from "./components/Details_display.vue";
+var regData = {
+  fn: "",
+  ln: "",
+  email: "",
+  pswd: "",
+  Hobbies: [],
+  warning: "",
+  Address: "",
+  date: "",
+  gender: "",
+  country: "",
+  state: "",
+  state_object: [],
+  country_object: Countries
+};
 export default {
   name: "root_registration",
-  components:{
+  components: {
     registration,
-    preview
+    preview,
+    employeeDetails
   },
-  data(){
-  return {edata:regData}
-  },
-
+  data() {
+    return { edata: regData };
+  }
 };
 </script>
 
-<style scoped lang="scss">
-
-
+<style scoped lang="css">
+.column {
+  border-style: groove;
+  flex: 50%;
+}
+.row {
+  display: flex;
+}
 </style>

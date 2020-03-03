@@ -80,10 +80,10 @@ label
     font-weight: bold;
 }
 .preview-container {
-  border: 1px solid #000;
+  // border: 1px solid #000;
   padding: 10%;
   padding-top: 0px;
-  float: right;
+  // float: right;
 }
 
 body {
@@ -93,17 +93,7 @@ body {
     background-color: #d3d3d3;
   }
 }
-.Form-class {
-  .fields {
-    margin-top: 5px;
-  }
-}
-.Form-class {
-  select {
-    margin-top: 2px;
-    margin-bottom: 6px;
-  }
-}
+
 .submit {
   background-color: #003399;
 }

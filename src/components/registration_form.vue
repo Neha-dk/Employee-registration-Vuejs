@@ -119,10 +119,10 @@ label
 }
 
 .registration-container {
-  float: left;
+  // float: left;
   padding: 10%;
   padding-top: 0px;
-  border: 1px solid #000;
+  // border: 1px solid #000;
 }
 
 body {
