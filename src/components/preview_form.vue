@@ -6,35 +6,35 @@
         <div class="Fields">
           <label>Full Name</label>
         </div>
-        <p>{{fullname()}}</p>
+        {{fullname()}}
         <div class="Fields">
           <label>Mail ID</label>
         </div>
-        <p>{{pdata.email}}</p>
+        {{pdata.email}}
         <div class="Fields">
           <label>Password</label>
         </div>
-        <p>{{pdata.pswd}}</p>
+        {{pdata.pswd}}
         <div class="Fields">
           <label>Date of Birth</label>
         </div>
-        <p>{{date_format()}}</p>
+        {{date_format()}}
         <div class="GenderClass">
           <div class="Fields">
             <label>Gender</label>
           </div>
-          <p>{{pdata.gender}}</p>
+          {{pdata.gender}}
         </div>
         <div class="Fields">
           <label>Country</label>
         </div>
-        <p>{{ pdata.country}}</p>
+        {{ pdata.country}}
 
         <div class="Fields">
           <label>State</label>
         </div>
         <div class="state-class">
-          <p>{{pdata.state}}</p>
+          {{pdata.state}}
         </div>
 
         <div class="hobbies-class">
@@ -47,8 +47,8 @@
         </div>
         <div class="Fields">
           <label>Address</label>
-        </div>
-        <p>{{pdata.Address}}</p>
+          {{pdata.Address}}
+        </div>        
       </div>
     </form>
   </div>
@@ -86,19 +86,11 @@ label
   // float: right;
 }
 
-body {
-  .Form-class {
+.Form-class {
     margin: 30px 30px;
-    padding: 10px;
-    background-color: #d3d3d3;
+    padding: 50px;
+    background-color: #635858;
   }
-}
 
-.submit {
-  background-color: #003399;
-}
 
-.cancel {
-  background-color: #a9a9a9;
-}
 </style>
