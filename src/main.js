@@ -1,10 +1,10 @@
 import Vue from 'vue'
 // import App from './App.vue'
-import registration from './components/registration.vue'
+import root_registration from './root_registration.vue'
 
 
 Vue.config.productionTip = false
 
 new Vue({
-  render: h => h(registration),
+  render: h => h(root_registration),
 }).$mount('#app')
