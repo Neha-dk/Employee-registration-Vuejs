@@ -10,12 +10,12 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/register-preview', component: registration_preview, props: true
+    name:'register-preview', path: '/register-preview', component: registration_preview, props: true
   },
   {
-     path: '/table', component: employeeDetails, props: true
+    name:'table', path: '/table', component: employeeDetails, props: true
   }
-]
+];
 
 const router = new VueRouter({
   routes

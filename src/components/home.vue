@@ -1,17 +1,21 @@
 <template>
   <div class="header">
     <div class="topnav">
-      <router-link to="/table">TABLE</router-link>
-      <router-link to="/register-preview">REGISTER</router-link>
+      <router-link :to="{name:'register-preview', params:{employeeList:emplist}}">REGISTER</router-link>
+      <router-link :to="{name:'table', params:{tdata:emplist}}">TABLE</router-link>
     </div>
     <router-view></router-view>
-  </div>
+  </div>  
 </template>
 
 <script>
 export default {
-  name: "home"
+  name: "home",
+  data(){
+    return {emplist:[]}
+  }
 };
+
 </script>
 
 <style>

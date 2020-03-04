@@ -8,6 +8,7 @@
         <preview :pdata="edata"></preview>
       </div>
     </div>
+    <button @click="toSave()">Add to table</button>
   </div>
 </template>
 
@@ -32,12 +33,23 @@ var regData = {
 };
 export default {
   name: "registration_preview",
+  props: {
+    employeeList: Array
+  },
   components: {
     registration,
     preview
   },
   data() {
-    return { edata: regData, employeeList: [] };
+    return { edata: regData };
+  },
+  methods: {
+    toSave() {
+      let obj = { ...this.edata };
+      this.employeeList.push(obj);
+      //reset();
+      console.log(this.employeeList);
+    }
   }
 };
 </script>

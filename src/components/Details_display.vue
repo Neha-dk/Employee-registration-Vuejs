@@ -34,11 +34,6 @@ export default {
   name: "employeeDetails",
   props: {
     tdata: Array
-  },
-  methods: {
-    display() {
-      return this.tdata;
-    }
   }
 };
 </script>
