@@ -8,7 +8,8 @@
         <preview :pdata="edata"></preview>
       </div>
     </div>
-    <employeeDetails></employeeDetails>
+    <button @click="toSave"> Add to table</button>
+    <employeeDetails :tdata="employeeList"></employeeDetails>
   </div>
 </template>
 
@@ -40,7 +41,16 @@ export default {
     employeeDetails
   },
   data() {
-    return { edata: regData };
+    return { edata: regData,employeeList:[] };
+  },
+  methods:
+  {
+    toSave()
+    {
+      var obj = {...this.edata};
+      
+      this.employeeList.push(obj);
+    }
   }
 };
 </script>
